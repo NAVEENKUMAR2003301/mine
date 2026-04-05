@@ -1,11 +1,6 @@
-// App.jsx - Modern Theme with Fixed Alignments
 
 import React, { useState, useEffect, createContext, useContext, useCallback } from 'react';
 
-// Make sure to add this to your index.html or index.css:
-// <script src="https://cdn.tailwindcss.com"></script>
-// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-// <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 // ==================== CONTEXT FOR THEME ====================
 const ThemeContext = createContext();
@@ -316,13 +311,13 @@ const HomeSection = () => {
                   <i className="fas fa-code text-4xl text-white"></i>
                 </div>
                 <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-black'}`}>NaveenKumar V</h3>
-                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Frontend Developer & Educator</p>
+                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}> Senior Associate Software Developer & Educator</p>
               </div>
 
               <div className="mt-6 space-y-3">
                 <div className="flex justify-between items-center py-2 border-b border-cyan-500/20">
                   <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Experience</span>
-                  <span className={`font-semibold ${darkMode ? 'text-white' : 'text-black'}`}>2+ Years</span>
+                  <span className={`font-semibold ${darkMode ? 'text-white' : 'text-black'}`}>1.6 Years</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-cyan-500/20">
                   <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Projects</span>
@@ -330,29 +325,29 @@ const HomeSection = () => {
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-cyan-500/20">
                   <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Students</span>
-                  <span className={`font-semibold ${darkMode ? 'text-white' : 'text-black'}`}>50+ Mentored</span>
+                  <span className={`font-semibold ${darkMode ? 'text-white' : 'text-black'}`}>500+ Mentored</span>
                 </div>
                 {!loading && weather && (
                   <div className="flex justify-between items-center pt-3">
                     <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                      <i className="fas fa-map-marker-alt mr-1"></i> Bangalore
+                      <i className="fas fa-map-marker-alt mr-1"></i> bangalore{console.log(fetch())}
                     </span>
                     <span className="text-sm font-semibold text-cyan-500">
-                      <i className="fas fa-cloud-sun mr-1"></i> {weather.temperature}
+                      <i className="fas fa-cloud-sun mr-1"></i> Bangalore
                     </span>
                   </div>
                 )}
               </div>
 
               <div className="mt-6 flex justify-center space-x-3">
-                <a href="#" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
+                <a href="https://github.com/naveenkumar2003301" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
                   <i className="fab fa-github text-sm"></i>
                 </a>
-                <a href="#" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
+                <a href="https://linkedin.com/in/naveenkumar-v" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
                   <i className="fab fa-linkedin-in text-sm"></i>
                 </a>
-                <a href="#" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
-                  <i className="fab fa-twitter text-sm"></i>
+                <a href="https://wa.me/916383366774" className={`w-9 h-9 rounded-full flex    items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
+                  <i className="fab fa-whatsapp text-sm"></i>
                 </a>
               </div>
             </div>
