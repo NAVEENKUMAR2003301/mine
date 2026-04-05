@@ -330,7 +330,7 @@ const HomeSection = () => {
                 {!loading && weather && (
                   <div className="flex justify-between items-center pt-3">
                     <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                      <i className="fas fa-map-marker-alt mr-1"></i> bangalore{console.log(fetch())}
+                      <i className="fas fa-map-marker-alt mr-1"></i> bangalore
                     </span>
                     <span className="text-sm font-semibold text-cyan-500">
                       <i className="fas fa-cloud-sun mr-1"></i> Bangalore
