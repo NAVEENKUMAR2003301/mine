@@ -343,7 +343,7 @@ const HomeSection = () => {
                 <a href="https://github.com/naveenkumar2003301" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
                   <i className="fab fa-github text-sm"></i>
                 </a>
-                <a href="www.linkedin.com/in/naveenkumar-v-a78244240" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
+                <a href="https://www.linkedin.com/in/naveenkumar-v-a78244240" className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
                   <i className="fab fa-linkedin-in text-sm"></i>
                 </a>
                 <a href="https://wa.me/916383366774" className={`w-9 h-9 rounded-full flex    items-center justify-center transition-all ${darkMode ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-black/10 hover:bg-black/20 text-black'}`}>
