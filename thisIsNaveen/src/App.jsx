@@ -976,7 +976,7 @@ const projectsData = [
     desc: "we can see Daily News",
     icon: "fas fa-leaf",
     gradient: "from-green-500 to-emerald-500",
-    projectLink: "https://nav-news-demo.com",  // Add unique link for each project
+    projectLink: "https://lnkd.in/gyeWKdEy",  // Add unique link for each project
     githubLink: "https://github.com/NAVEENKUMAR2003301/News"  // Optional: GitHub link
   },
   {
