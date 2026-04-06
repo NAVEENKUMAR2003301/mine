@@ -198,13 +198,13 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
-              <button
+              {/* <button
                 onClick={toggleDarkMode}
                 className={`ml-2 w-9 h-9 rounded-full flex items-center justify-center ${darkMode ? 'bg-white/10 text-yellow-400' : 'bg-black/5 text-gray-700'
                   }`}
               >
                 <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
-              </button>
+              </button> */}
             </div>
 
             <div className="flex items-center gap-2 md:hidden">
@@ -954,12 +954,12 @@ const ServicesSection = () => {
         </div>
 
         {/* Dark Mode Toggle Button */}
-        <button
+        {/* <button
           onClick={toggleDarkMode}
           className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white p-3 rounded-full shadow-2xl transition-all duration-300"
         >
           <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-xl`}></i>
-        </button>
+        </button> */}
       </div>
     </section>
   );
