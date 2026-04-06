@@ -994,7 +994,7 @@ const projectsData = [
     desc: "Digital gym service provider model",
     icon: "fas fa-d",
     gradient: "from-purple-500 to-pink-500",
-    projectLink: "https://gym-site-demo.com",
+    projectLink: "https://pulsegym1.netlify.app/",
     githubLink: "https://github.com/NAVEENKUMAR2003301/gym/tree/main/pulse-landing-page"
   },
 ];
