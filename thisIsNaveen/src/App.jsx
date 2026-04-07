@@ -198,13 +198,13 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
-              {/* <button
+              <button
                 onClick={toggleDarkMode}
                 className={`ml-2 w-9 h-9 rounded-full flex items-center justify-center ${darkMode ? 'bg-white/10 text-yellow-400' : 'bg-black/5 text-gray-700'
                   }`}
               >
                 <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
-              </button> */}
+              </button>
             </div>
 
             <div className="flex items-center gap-2 md:hidden">
@@ -1190,7 +1190,7 @@ const ContactSection = () => {
               <textarea
                 name="message"
                 rows="4"
-                placeholder="Tell me about your project..."
+                placeholder="Tell me how can i help you..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
