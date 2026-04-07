@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, createContext, useContext, useCallback } from 'react';
-
+import profile1 from "../public/profile.png"
 
 // ==================== CONTEXT FOR THEME ====================
 const ThemeContext = createContext();
@@ -308,7 +308,7 @@ const HomeSection = () => {
             <div className={`relative rounded-2xl p-8 backdrop-blur-xl ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-black/5 border border-black/10'}`}>
               <div className="text-center">
                 <div className="w-28 h-28 mx-auto bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-4 shadow-2xl">
-                  <i className="fas fa-code text-4xl text-white"></i>
+                  <img className='  rounded-2xl' src={profile1} alt="navi" />
                 </div>
                 <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-black'}`}>NaveenKumar V</h3>
                 <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}> Senior Associate Software Developer & Educator</p>
@@ -474,40 +474,7 @@ const ServiceSection = [
     pricingINR: "₹15,000 - ₹45,000",
     timeline: "3-5 weeks"
   },
-  {
-    id: 2,
-    name: "UI/UX Design",
-    icon: "fas fa-pen-ruler",
-    shortDesc: "Beautiful designs with Figma",
-    gradient: "from-purple-500 to-pink-500",
-    detailedDesc: "I create intuitive and engaging user interfaces using Figma. My designs focus on user experience, modern aesthetics, and seamless interactions that delight users.",
-    features: [
-      "Wireframing & prototyping in Figma",
-      "User flow & information architecture",
-      "High-fidelity mockups",
-      "Design systems & component libraries",
-      "Responsive & mobile-first designs",
-      "Usability testing",
-      "Developer-friendly handoff"
-    ],
-    technologies: ["Figma", "Adobe XD", "Miro", "Whimsical"],
-    benefits: [
-      "Improved user satisfaction",
-      "Reduced development rework",
-      "Consistent brand experience",
-      "Faster time-to-market"
-    ],
-    process: [
-      "User research",
-      "Wireframing",
-      "Prototyping",
-      "Visual design",
-      "Usability testing",
-      "Design handoff"
-    ],
-    pricingINR: "₹10,000 - ₹30,000",
-    timeline: "2-4 weeks"
-  },
+  
   {
     id: 3,
     name: "Tech Training & Mentoring",
@@ -576,73 +543,8 @@ const ServiceSection = [
     pricingINR: "₹8,000 - ₹15,000",
     timeline: "1-2 weeks"
   },
-  {
-    id: 5,
-    name: "Python Development + ML Projects",
-    icon: "fab fa-python",
-    shortDesc: "Python apps + 2 bonus ML projects",
-    gradient: "from-green-500 to-emerald-600",
-    detailedDesc: "Full-stack Python development with Django/Flask. Plus, get 2 exclusive machine learning projects: Sales Forecasting and Movie Recommendation System to boost your portfolio.",
-    features: [
-      "Python web apps (Django/Flask)",
-      "Database integration (SQL)",
-      "REST API development",
-      "Data analysis with Pandas",
-      "ML Project 1: Sales Forecasting",
-      "ML Project 2: Movie Recommender",
-      "Model deployment basics"
-    ],
-    technologies: ["Python", "Django", "Flask", "SQL", "Pandas", "Scikit-learn", "Matplotlib"],
-    benefits: [
-      "End-to-end web applications",
-      "Real-world ML experience",
-      "Stand out in interviews",
-      "Production-ready code"
-    ],
-    process: [
-      "Requirements analysis",
-      "Backend development",
-      "ML model building",
-      "Integration & testing",
-      "Deployment guide"
-    ],
-    pricingINR: "₹35,000 - ₹60,000",
-    timeline: "5-7 weeks",
-    mlBadge: "2 ML Projects Included"
-  },
-  {
-    id: 6,
-    name: "SQL & Database Design",
-    icon: "fas fa-database",
-    shortDesc: "Efficient database design & queries",
-    gradient: "from-indigo-500 to-purple-600",
-    detailedDesc: "Expert SQL database design, optimization, and complex query writing. Learn or get help with PostgreSQL, MySQL, and database best practices.",
-    features: [
-      "Database schema design",
-      "Complex SQL queries (JOINs, subqueries)",
-      "Query optimization & indexing",
-      "Data modeling & normalization",
-      "Database migration strategies",
-      "Backup & recovery",
-      "Integration with Python/Node.js"
-    ],
-    technologies: ["PostgreSQL", "MySQL", "SQLite", "Prisma", "SQLAlchemy"],
-    benefits: [
-      "Faster data retrieval",
-      "Scalable database architecture",
-      "Data integrity & consistency",
-      "Reduced storage costs"
-    ],
-    process: [
-      "Requirements analysis",
-      "ER diagram design",
-      "Schema implementation",
-      "Query optimization",
-      "Documentation"
-    ],
-    pricingINR: "₹12,000 - ₹25,000",
-    timeline: "2-3 weeks"
-  }
+ 
+ 
 ];
 
 // Service Detail Page Component
