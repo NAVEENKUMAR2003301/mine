@@ -1103,15 +1103,40 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setSubmitted(true);
-    setIsSubmitting(false);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: '', email: '', message: '' });
+    setError('');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mjkolnyz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -1144,13 +1169,46 @@ const ContactSection = () => {
 
           <div className={`p-6 rounded-2xl ${darkMode ? 'bg-white/5' : 'bg-gray-50'}`}>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input type="text" name="name" placeholder="Your name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className={`w-full px-4 py-3 rounded-xl border outline-none focus:ring-2 focus:ring-cyan-500 ${darkMode ? 'bg-black/50 border-white/10 text-white placeholder-gray-500' : 'bg-white border-gray-200 text-black'}`} />
-              <input type="email" name="email" placeholder="Your email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className={`w-full px-4 py-3 rounded-xl border outline-none focus:ring-2 focus:ring-cyan-500 ${darkMode ? 'bg-black/50 border-white/10 text-white placeholder-gray-500' : 'bg-white border-gray-200 text-black'}`} />
-              <textarea name="message" rows="4" placeholder="Tell me about your project..." value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required className={`w-full px-4 py-3 rounded-xl border outline-none focus:ring-2 focus:ring-cyan-500 ${darkMode ? 'bg-black/50 border-white/10 text-white placeholder-gray-500' : 'bg-white border-gray-200 text-black'}`}></textarea>
-              <button type="submit" disabled={isSubmitting} className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-70">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+                className={`w-full px-4 py-3 rounded-xl border outline-none focus:ring-2 focus:ring-cyan-500 ${darkMode ? 'bg-black/50 border-white/10 text-white placeholder-gray-500' : 'bg-white border-gray-200 text-black'}`}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+                className={`w-full px-4 py-3 rounded-xl border outline-none focus:ring-2 focus:ring-cyan-500 ${darkMode ? 'bg-black/50 border-white/10 text-white placeholder-gray-500' : 'bg-white border-gray-200 text-black'}`}
+              />
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Tell me about your project..."
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                required
+                className={`w-full px-4 py-3 rounded-xl border outline-none focus:ring-2 focus:ring-cyan-500 ${darkMode ? 'bg-black/50 border-white/10 text-white placeholder-gray-500' : 'bg-white border-gray-200 text-black'}`}
+              ></textarea>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-70"
+              >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
-              {submitted && <p className="text-green-500 text-center text-sm font-semibold">✓ Message sent successfully!</p>}
+              {submitted && (
+                <p className="text-green-500 text-center text-sm font-semibold">✓ Message sent successfully!</p>
+              )}
+              {error && (
+                <p className="text-red-500 text-center text-sm font-semibold">{error}</p>
+              )}
             </form>
           </div>
         </div>
